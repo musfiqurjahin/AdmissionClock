@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+<title>Admission Journey</title>
+</head>
+<body>
+  <div class="clock-container">
+    <div class="controls" id="controls">
+      <input type="color" id="colorPicker" title="Pick a color for the clock" />
+      <input type="range" id="fontSizeRange" min="10" max="30" step="1" value="15" />
+      <!-- Custom background upload button -->
+      <input type="file" id="bgUpload" accept="image/*" />
+      <i class="fas fa-check check-btn" id="checkBtn"></i>
+  </div>
+  
+    <div style="height: 50px;"></div>
+    <div id="greeting"></div>
+    <div id="date"></div>
+    <div id="clock"></div>
+    <i class="fas fa-chevron-down scroll-icon"></i>
+</div>
+
+
+  <body class="dark">
+<label class="ui-switch">
+  <input type="checkbox" id="theme-toggle" checked>
+  <div class="slider">
+    <div class="circle"></div>
+  </div>
+</label>
+
+<div class="sort-container">
+  <select id="sort-select" class="sort-select">
+    <option value="asc">Sort by Date (Ascending)</option>
+    <option value="desc">Sort by Date (Descending)</option>
+  </select>
+</div>
+
+<div class="container" id="container">
+  <div class="container" id="container">
+    <div class="tile dark" id="MedicalAdmission25" data-date="2025-01-17T11:00:00">
+      <h2>Medical Admission Exam</h2>
+      <p>Date: 17 January 2025</p>
+      <p>Time: 11:00 AM</p>
+      <p><strong>Center:</strong> RAJSHAHI MEDICAL COLLEGE,RAJSHAHI</p>
+      <div class="countdown dark" id="countdown1"></div>
+      <button class="download-btn" onclick="downloadTile('MedicalAdmission25')"><i class="fas fa-download"></i></button>
+    </div>
+
+    <div class="tile dark" id="Dental_Admission25" data-date="2025-02-28T10:00:00">
+      <h2>Dental Admission Exam</h2>
+      <p>Date: 28 February 2025</p>
+      <p>Time: 10:00 AM to 11:00 AM</p>
+      <p><strong>Center:</strong> Not Confirmed</p>
+      <div class="countdown dark" id="countdown4"></div>
+      <button class="download-btn" onclick="downloadTile('Dental_Admission25')"><i class="fas fa-download"></i></button>
+    </div>
+
+  <div class="tile dark" id="DU_B-Unit_Admission25" data-date="2025-01-25T11:00:00">
+    <h2>DU B-Unit Exam</h2>
+    <p>Date: 25 January 2025</p>
+    <p>Time: 11:00 AM</p>
+    <p>Center: RAJSHAHI</p>
+    <div class="countdown dark" id="countdown2"></div>
+    <button class="download-btn" onclick="downloadTile('DU_B-Unit_Admission25')"><i class="fas fa-download"></i></button>
+  </div>
+
+  <div class="tile dark" id="DU_A-Unit_Admission25" data-date="2025-02-15T11:00:00">
+    <h2>DU A-Unit Exam</h2>
+    <p>Date: 15 February 2025</p>
+    <p>Time: 11:00 AM</p>
+    <p>Center: RAJSHAHI</p>
+    <div class="countdown dark" id="countdown3"></div>
+    <button class="download-btn" onclick="downloadTile('DU_A-Unit_Admission25')"><i class="fas fa-download"></i></button>
+  </div>
+</div>
+<div class="add-tile-btn" id="addTileBtn">
+    <i class="fas fa-add"></i>
+</div>
+
+<!-- Floating Form -->
+<div class="floating-form" id="floatingForm">
+  <div class="form-container">
+    <header>Add New Countdown↴</header>
+    <label for="tileTitle">Title:</label>
+    <input type="text" id="tileTitle" placeholder="Exam Name" required>
+    
+    <label for="tileDate">Date:</label>
+    <input type="date" id="tileDate" required>
+    
+    <label for="tileTime">Time:</label>
+    <input type="time" id="tileTime" required>
+    
+    <label for="tileCenter">Center:</label>
+    <input type="text" id="tileCenter" placeholder="Exam Center" required>
+    
+    <button id="addTile"><i class="fas fa-plus-circle"></i> Add</button>
+    <button id="cancelTile"><i class="fas fa-undo-alt"></i> Cancel</button>
+    
+  </div>
+</div>
+<script src="app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
