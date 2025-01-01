@@ -543,3 +543,23 @@
     background: #3bfc00;
     color: #1a1a1a;
   }
+
+  #removeBgBtn {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #fc3b00;
+    border-radius: 5px;
+    background: #1a1a1a;
+    color: #fc3b00;
+    cursor: pointer;
+    outline: none;
+  }
+
+  #removeBgBtn:hover {
+    background: #fc3b00;
+    color: #1a1a1a;
+  }
+
+  #removeBgBtn i {
+    font-size: 20px; /* Adjust icon size */
+  }
