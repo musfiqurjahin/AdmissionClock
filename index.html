@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
@@ -18,8 +17,6 @@
       <input type="range" id="fontSizeRange" min="10" max="30" step="1" value="15" />
       <!-- Custom background upload button -->
       <input type="file" id="bgUpload" accept="image/*" />
-      <!--Remove BG_btn-->
-      <button id="removeBgBtn"><i class="fas fa-trash-alt"></i> RemoveBG </button>
       <i class="fas fa-check check-btn" id="checkBtn"></i>
   </div>
   
@@ -109,46 +106,7 @@
     
   </div>
 </div>
-<script>
-  // Folder path and filenames
-const folderPath = 'Functions/';
-const scriptNames = [
-    'Theme',
-    'scroll',
-    'Re-Orderer',
-    'Editor',
-    'Opn_Editor',
-    'Hide_Editor',
-    'elements',
-    'countdown',
-    'clock',
-    'BG',
-    'Download_HnDLR',
-    'Add_NEW+'
-];
-
-// Build full script URLs dynamically
-const scripts = scriptNames.map(name => `${folderPath}${name}.js`);
-
-// Function to load a JavaScript file dynamically
-function loadScript(src) {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.onload = () => resolve(`${src} loaded successfully`);
-        script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
-        document.head.appendChild(script);
-    });
-}
-
-// Load all scripts
-Promise.all(scripts.map(loadScript))
-    .then(messages => {
-        messages.forEach(message => console.log(message));
-        console.log("All scripts loaded successfully!");
-    })
-    .catch(error => console.error(error));
-</script>
+<script src="app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </body>
 </html>
